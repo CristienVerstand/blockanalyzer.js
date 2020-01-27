@@ -10,7 +10,7 @@ Its purpose is also to peck transactions involving addresses in the wallet.
 ### Usage
 ---
 
-We are working on the documentation.
+
 
 ### License
 ---
