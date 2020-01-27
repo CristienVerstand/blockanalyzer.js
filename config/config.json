@@ -1,0 +1,29 @@
+{
+    "testing": {
+        "network": "ropsten",
+        "provider": "https://ropsten.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c",
+        "contract_address": "0x28532D10dB1B41cb91d2c0A1ec3E576F58f00d00", 
+        "contractOwner": {
+            "addr": "0x4F6879798838460f4F8184608ec69bEd6f213de2",
+            "key": "5a4e3b2488da4fde0b4153e26d8783d7e7fb73ab57b347e760ccb494f1d34c00"
+        },
+        "coinbaseG4C": {
+            "addr": "0x4F6879798838460f4F8184608ec69bEd6f213de2",
+            "key": "5a4e3b2488da4fde0b4153e26d8783d7e7fb73ab57b347e760ccb494f1d34c00"
+        }
+    },
+
+    "production": {
+        "network": "mainnet",
+        "provider": "mainnet.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c",
+        "contract_address": "0xC61abBF5b981ee0f10A1EBca25908d499E02FCd0", 
+        "contractOwner": {
+            "addr": "0x6De68404458e5f045c52D28C913DF8A72834CaD0",
+            "key": "8201e8c0e3eb91f1512789c7698e038055322f1537b9a8a50814cecaf24f660f"
+        },
+        "coinbaseG4C": {
+            "addr": "0x74AA9112AaaC9DE327530E8bd46e4D631434e14e",
+            "key": "287237457862d8fe79966a25d577e674791550bcc014ce4d4aecff598d617f22"
+        }
+    }
+}
