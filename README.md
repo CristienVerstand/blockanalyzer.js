@@ -10,6 +10,8 @@ Its purpose is also to peck transactions involving addresses in the wallet.
 ### Usage
 ---
 
+To allow us to receive a PromiEvent (a Promise that can also emit events) when one of our addresses receives a deposit we use the code below.
+
 ``` javascript
 const BlockAnalyzer = require("../packages/blockanalyzer.js");
 
