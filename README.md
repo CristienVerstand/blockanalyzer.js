@@ -12,8 +12,4 @@ We are working on the documentation.
 
 ### License
 ---
-GPL
-
-### Supported and Developed by
----
-[![N|Solid](https://www.zerodivision.it/wp-content/uploads/2015/10/zdlogo.png)](https://www.zerodivision.it)
+GPL v 3
