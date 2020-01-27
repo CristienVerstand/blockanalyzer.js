@@ -15,6 +15,19 @@ const BlockAnalyzer = require("../packages/blockanalyzer.js");
 
 let blockanalyzer = new BlockAnalyzer(constructorObj);
 
+let constructorObj = {
+  web3: {
+    url: "YOUR ENDPOINT",
+    block: 7207840,
+    timeout: 2000,
+    password: ""
+  },
+  accounts: {
+    method: "list",
+    accounts: [""]
+  }
+};
+
 blockanalyzer
   .listen()
   .on("newdeposit", deposits => {
