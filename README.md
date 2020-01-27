@@ -10,7 +10,22 @@ Its purpose is also to peck transactions involving addresses in the wallet.
 ### Usage
 ---
 
+``` javascript
+const BlockAnalyzer = require("../packages/blockanalyzer.js");
 
+let blockanalyzer = new BlockAnalyzer(constructorObj);
+
+blockanalyzer
+  .listen()
+  .on("newdeposit", deposits => {
+    if (deposits.length == 0) {
+      return;
+    }
+
+    console.log("New deposit found!!!");
+  })
+  .on("error", console.log);
+```
 
 ### License
 ---
