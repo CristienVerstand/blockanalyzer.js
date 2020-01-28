@@ -1,19 +1,31 @@
+/*
+    POLICIY, GPL STUFF 
+*/
+
+/**
+ * @file blockanalyzer.js
+ * @author Cristian Chirivì aka Neb <chircristiandev@gmail.com>
+ * @date 2020
+ */
+
+
 const BlockAnalyzer = require("../packages/blockanalyzer.js");
+const fs = require('fs');
 const Web3 = require("Web3");
 
-// https://mainnet.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c
-// https://ropsten.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c
+let rawdata = fs.readFileSync('../config/config.json');
+let config = JSON.parse(rawdata);
 
 let constructorObj = {
   web3: {
-    url: "https://ropsten.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c",
-    block: 7207840,
+    url: config.testing.provider,
+    block: 7212365,
     timeout: 2000,
     password: ""
   },
-  accounts: {
+  personal: {
     method: "list",
-    accounts: ["0x4F6879798838460f4F8184608ec69bEd6f213de2"]
+    accounts: config.testing.accounts
   }
 };
 
@@ -35,6 +47,6 @@ blockanalyzer
       return;
     }
 
-    console.log("New deposit found!!!");
+    console.log("New deposit found!!!\n", deposits);
   })
   .on("error", console.log);

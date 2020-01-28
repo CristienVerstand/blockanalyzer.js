@@ -54,28 +54,28 @@ class BlockAnalyzer {
   accountLoader() {
     //TODO: Improve account loader method...
     return new Promise((resolve, reject) => {
-      if (this.constructorObj.accounts.method == "node") {
+      if (this.constructorObj.personal.method == "node") {
         //TODO: Check argument passed
         this.loadAccountsFromNode()
           .then(resolve)
           .catch(reject);
       }
-      if (this.constructorObj.accounts.method == "file") {
+      if (this.constructorObj.personal.method == "file") {
         //TODO: Check argument passed
         this.loadAccountsFromFile().then(() => {
           resolve();
         });
       }
-      if (this.constructorObj.accounts.method == "keystore") {
+      if (this.constructorObj.personal.method == "keystore") {
         //TODO: Check argument passed
         this.addresses = this.loadAccountsFromKeystore(
-          this.constructorObj.accounts.path
+          this.constructorObj.personal.path
         );
         resolve();
       }
-      if (this.constructorObj.accounts.method == "list") {
+      if (this.constructorObj.personal.method == "list") {
         //TODO: Check argument passed
-        this.addresses = this.constructorObj.accounts.list;
+        this.addresses = this.constructorObj.personal.accounts;
         resolve("ok");
       }
     });
@@ -126,10 +126,17 @@ class BlockAnalyzer {
     let deposits = [];
 
     for (let txobj in transactionslist) {
-      for (let address in this.addresses) {
-        let walletaddress = this.addresses[address];
+      if (transactionslist[txobj]["to"] === null) {
+        continue;
+      }
 
-        if (walletaddress == transactionslist[txobj]["to"]) {
+      for (let addrex in this.addresses) {
+        let walletaddress = this.addresses[addrex];
+
+        if (
+          walletaddress.toUpperCase() ==
+          transactionslist[txobj]["to"].toUpperCase()
+        ) {
           deposits.push(transactionslist[txobj]);
         }
       }
@@ -181,9 +188,9 @@ class BlockAnalyzer {
       }
 
       Promise.all(promises).then(alltxobj => {
-        this.currentBlock += 1;
-
         let deposits = this.checkTransaction(alltxobj);
+
+        this.currentBlock += 1;
 
         console.log("Deposits --" + deposits);
         resolve(deposits);
