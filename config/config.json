@@ -1,29 +1,6 @@
 {
     "testing": {
-        "network": "",
-        "provider": "",
-        "contract_address": "", 
-        "contractOwner": {
-            "addr": "",
-            "key": ""
-        },
-        "coinbaseG4C": {
-            "addr": "",
-            "key": ""
-        }
-    },
-
-    "production": {
-        "network": "",
-        "provider": "",
-        "contract_address": "", 
-        "contractOwner": {
-            "addr": "",
-            "key": ""
-        },
-        "coinbaseG4C": {
-            "addr": "",
-            "key": ""
-        }
+        "provider": "https://ropsten.infura.io/v3/22ce6fb0a1454ab3a9600cc0943da06c",
+        "accounts": ["0x4F6879798838460f4F8184608ec69bEd6f213de2", "0x977b3D6F75cf46dE7A7e7De132F00719aE072077"]
     }
 }
