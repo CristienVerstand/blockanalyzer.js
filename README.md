@@ -1,9 +1,9 @@
 # blockanalyzer.js
 
 [![Build Status](https://img.shields.io/badge/Build%20Status-Alpha-informational)](https://travis-ci.org/joemccann/dillinger)
-<div style="text-align:center">
-<img align="center" src="https://i.imgur.com/aptKt37.png" width="160">
-</div>
+<p align="center">
+<img src="https://i.imgur.com/aptKt37.png" width="175">
+<p/>
 This is an npm module for ethereum developed to facilitate the development of applications where the main need or important part is to do monitoring and control of transaction blocks.
 Its purpose is also to peck transactions involving addresses in the wallet.
 
